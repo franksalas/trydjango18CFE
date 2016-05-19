@@ -7,5 +7,6 @@ class SignUp(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
     update = models.DateField(auto_now_add=False, auto_now=True)
 
+    # needed for viewing correctly
     def __str__(self):  # __unicode__ for 2x
         return self.email
