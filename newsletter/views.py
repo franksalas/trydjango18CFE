@@ -15,6 +15,12 @@ def home(request):
         'title': title,
         'form': form,
     }
+
+    if request.user.is_authenticated() and request.user.is_staff:
+        context = {
+            'queryset': [123,456]
+        }
+
     return render(request, 'home.html', context)
 
 

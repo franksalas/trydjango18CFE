@@ -3,12 +3,14 @@
 {% block head_title %} Welcome | {% endblock %}
 <style>
 {% block style %}
-
+.jumbotron{
+background-color: #3c763d}
  {% endblock %}
 </style>
 
 {% block jumbotron %}
     <div class="jumbotron">
+    <div class="container">
     <div class="row">
         <div class="col-sm-6">
 
@@ -27,10 +29,18 @@
     <div class="col-sm-6"style="background-color: black;height: 300px;">
 
     </div>
-    </div></div>
+    </div></div></div>
 {% endblock %}
 
+
+
+
 {% block content %}
+    {%  if request.user.is_authenticated %}
+    <h1>You are logged in!</h1>
+    {{ queryset }}
+
+    {% else %}
     <div class="row">
 
         <div class="col-sm-3 pull-right">
@@ -54,4 +64,5 @@
     </div>
 
     </div>
+    {% endif %}
 {% endblock %}
