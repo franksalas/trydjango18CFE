@@ -24,6 +24,8 @@ urlpatterns = [
     url(r'^about/$', 'trydjango18CFE.views.about', name='about'),
 
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^accounts/', include('registration.backends.default.urls')),
+
 ]
 
 # do not use on production
